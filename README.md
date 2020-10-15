@@ -10,7 +10,7 @@ The app can be found at: https://davidtob.shinyapps.io/Formula1/
 
 ## Files 
 
-* [app.R] (https://github.com/dav-to/Formula-1-Shiny/blob/main/app.R) contains the main script for running the app
+* [app.R](app.R) contains the main script for running the app
 * dataPrep.R file for data preparation
 * PlotFunction.R script for creating plots
 
