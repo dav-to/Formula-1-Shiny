@@ -1,6 +1,6 @@
 # Formula-1 Shiny App
 
-A Shiny web app fro vizualization of formula one results. Driver or team standings can be compared for a selected season. 
+A Shiny web app for vizualization of formula one results. Driver or team standings can be compared for a selected season. 
 <br/>
 <br/>
 ![Print screen of app](app_image.PNG)
