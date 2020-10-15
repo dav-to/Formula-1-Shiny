@@ -33,7 +33,7 @@ plot_f1<-function(year_val, d, top){
   c_plot_data<-c_plot_data %>% filter(Name %in% topnames)
   #c_plot_data<-subset(c_plot_data, Name == topnames)
   plot1<-ggplot(c_plot_data, aes(x=round, y =points, color=Name,
-                                 linetype = Name)) + geom_line(size=1.3) + theme_light() + 
+                                 linetype = Name)) + geom_line(size=1.3) + theme_grey() + 
     ggtitle(year_val) + labs(x="Race", caption = cap, colour = labelname, linetype =labelname )
   return(plot1)
 }
