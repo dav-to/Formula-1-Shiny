@@ -6,7 +6,7 @@ A Shiny web app fro vizualization of formula one results. Driver or team standin
 ![Print screen of app](app_image.PNG)
 
 
-The app can be found at: https://davidtob.shinyapps.io/Formula1/
+The app can be found at: https://davidtob.shinyapps.io/Formula-1-Shiny/
 
 ## Files 
 
