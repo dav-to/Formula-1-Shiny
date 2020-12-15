@@ -3,10 +3,8 @@
 A Shiny web app showing formula one data. In the app driver or team standings can be compared for a selected season, as well as individual information about drivers.
 <br/>
 <br/>
+
 ![Print screen of the app](app_image.PNG)
-
-
-The app can be found at: https://davidtob.shinyapps.io/Formula-1-Shiny/
 
 ## Files 
 
