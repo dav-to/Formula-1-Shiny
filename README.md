@@ -17,5 +17,5 @@ A Shiny web app showing formula one data. In the app driver or team standings ca
 
 ## Data
 
-Data source for the app is ergast.com/mrd
+Data source this app is ergast.com/mrd
 

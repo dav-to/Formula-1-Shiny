@@ -22,7 +22,7 @@
 .skin-blue .main-sidebar {
   background-color: #191a19;
 }
-/*when item is active*/
+
 .skin-blue .main-sidebar .sidebar-menu .active a {
   background-color: white;
   color: black;
