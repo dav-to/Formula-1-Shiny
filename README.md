@@ -4,6 +4,8 @@ A Shiny web app showing formula one data. In the app driver or team standings ca
 <br/>
 <br/>
 
+The app can be found at: https://davidtob.shinyapps.io/Formula-one-data/
+
 ![Print screen of the app](app_image.PNG)
 
 ## Files 
