@@ -1,0 +1,63 @@
+
+.main-header .logo {
+  font-family: "Trebuchet MS", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+
+/*Logo part of header */
+.skin-blue .main-header .logo {
+  background-color: #191a19;
+}
+
+.skin-blue .main-header .logo:hover {
+  background-color: #191a19;
+}
+
+.skin-blue .main-header .navbar {
+  background-color: #191a19;
+}
+
+.skin-blue .main-sidebar {
+  background-color: #191a19;
+}
+/*when item is active*/
+.skin-blue .main-sidebar .sidebar-menu .active a {
+  background-color: white;
+  color: black;
+}
+
+.skin-blue .main-sidebar .sidebar-menu a {
+  background-color: #002b36;
+  color: #839496;
+}
+
+.skin-blue .main-sidebar .sidebar-menu a:hover {
+  background-color: white;
+  color: black;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #313332;
+}
+
+.content-wrapper, .right-side {
+  background-color: #002b36;
+  border-style: none;
+}
+
+.about {
+  background-color: #002b36;
+  color: #839496;
+  font-family: "Trebuchet MS", Times, "Times New Roman", serif;
+}
+
+
+
+
+
+
+
+
+

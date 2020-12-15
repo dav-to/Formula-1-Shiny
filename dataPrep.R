@@ -1,6 +1,6 @@
-###########################
-# Data Preparation for F1 App
-###########################
+##################################
+# Data Preparation for Seasons Tab
+##################################
 
 # Packages
 
@@ -9,7 +9,6 @@ library(tidyr)
 library(dplyr)
 
 # Loading Data
-
 # driver standings 
 driver_data<-read.csv("driver_standings.csv", header = TRUE, col.names = c("driverStandingsId", "raceId", "driverId", "points", "position", "positionText", "wins") )
 # drivers
@@ -24,9 +23,10 @@ races<-read.csv("races.csv", header = TRUE, col.names = c("raceId", "year", "rou
 # Combining data 
 constructor_data<-merge(constructor_data, races, by.x = "raceId", by.y = "raceId")
 constructor_data<-merge(constructor_data, constructors, by.x = "constructorId", by.y = "constructorId")
+
 # Only need a subset of constructor_data
-constructor_data<-constructor_data[,
-                                   c( "constructorStandingsId", "raceId", "constructorId", "points", "wins", "year", "round", "name.y")]
+constructor_data<-constructor_data[, c( "constructorStandingsId", "raceId", "constructorId", "points", "wins", "year", "round", "name.y")]
+
 # Set the column with the names of constructors to Name
 names(constructor_data)[names(constructor_data)=="name.y"]="Name"
 
@@ -34,18 +34,15 @@ names(constructor_data)[names(constructor_data)=="name.y"]="Name"
 driver_data<-merge(driver_data, races, by.x = "raceId", by.y = "raceId")
 driver_data<-merge(driver_data, drivers, by.x = "driverId", by.y = "driverId")
 driver_data<-driver_data[, c("driverId", "raceId", "driverStandingsId", "points", "wins", "year", "round", "forename", "surname")]
+
 # Paste together forename and surname 
 driver_data <- driver_data %>% unite("Name", forename, surname, sep = " ")
+
 # Fixing some characters in the names
 driver_data[, "Name"]<-gsub("Ã¶", "ö", driver_data[,"Name"])
 driver_data[, "Name"]<-gsub("Ã¤", "ä", driver_data[,"Name"])
 driver_data[, "Name"]<-gsub("Ã©", "é", driver_data[,"Name"])
 driver_data[, "Name"]<-gsub("Ã¼", "ü", driver_data[,"Name"])
-
-
-
-
-
 
 
 

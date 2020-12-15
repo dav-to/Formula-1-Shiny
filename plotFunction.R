@@ -5,13 +5,9 @@
 # Packages
 
 library(ggplot2)
+library(ggthemes)
 library(tidyr)
 library(dplyr)
-
-# Disclaimer caption 
-
-cap<-"Data source 
-ergast.com/mrd"
 
 # Function for Plotting
 
@@ -21,10 +17,10 @@ plot_f1<-function(year_val, d, top){
     labelname <- "Driver"
   } else {
     dataset <- constructor_data
-    labelname <- "Constructor"
+    labelname <- "Team"
   }
   
-  #Subbsetting the year we want to plot
+  #Subbsetting the year we want 
   c_plot_data<-subset(dataset, year==year_val)
   # sorting after final result 
   subdata<-c_plot_data %>% filter(round == max(round))
@@ -33,7 +29,10 @@ plot_f1<-function(year_val, d, top){
   c_plot_data<-c_plot_data %>% filter(Name %in% topnames)
   #c_plot_data<-subset(c_plot_data, Name == topnames)
   plot1<-ggplot(c_plot_data, aes(x=round, y =points, color=Name,
-                                 linetype = Name)) + geom_line(size=1.3) + theme_grey() + 
-    ggtitle(year_val) + labs(x="Race", caption = cap, colour = labelname, linetype =labelname )
+                                 linetype = Name)) + geom_line(size=1.3) + theme_solarized_2(light = FALSE) +
+    ggtitle(year_val) + labs(x="Race", colour = labelname, linetype =labelname )
   return(plot1)
 }
+
+
+
