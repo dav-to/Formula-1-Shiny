@@ -16,7 +16,7 @@ seasonpage_drivers <- fluidPage(fluidRow(column(9,plotOutput("graph"))),
               sliderInput(inputId = "top", label = "Number of Drivers to Show", 
               value = 5, min = 1, max = 10, step = 1, sep=""), style="font-size: 12px;padding: 0px;margin: 0px;color:#839496;background-color:#002b36;border-color:#002b36;"))))
 
-# And for teams
+# and for teams
 seasonpage_teams <- fluidPage(fluidRow(column(9,plotOutput("graph2"))),
                       fluidRow(column(8,offset = 0, wellPanel(sliderInput(inputId = "year2",
                       label = "Season", value = 2020, min = 1958, max = 2020, step = 1, sep=""),
