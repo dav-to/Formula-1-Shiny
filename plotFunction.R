@@ -9,6 +9,7 @@ library(tidyr)
 library(dplyr)
 
 # Function for Plotting
+
 plot_f1<-function(year_val, d, top){
   if (d == "A"){
     dataset <- driver_data
