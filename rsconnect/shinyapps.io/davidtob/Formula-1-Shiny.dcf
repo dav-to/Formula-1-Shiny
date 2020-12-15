@@ -1,0 +1,13 @@
+name: Formula-1-Shiny
+title: Formula-1-Shiny
+username:
+account: davidtob
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3022692
+bundleId: 3991587
+url: https://davidtob.shinyapps.io/Formula-1-Shiny/
+when: 1608028360.13066
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|app_image.PNG|circuits.csv|constructor_results.csv|lap_times.csv|pit_stops.csv|README.md|results.csv|seasons.csv|status.csv|www/checker.png|www/race.png
