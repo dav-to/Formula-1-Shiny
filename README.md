@@ -19,5 +19,5 @@ The app can be found at: https://davidtob.shinyapps.io/Formula-one-data/
 
 ## Data
 
-Data source for this app is ergast.com/mrd
+Data source for this app is: http://ergast.com/mrd
 
