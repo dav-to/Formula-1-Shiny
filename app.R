@@ -28,7 +28,9 @@ driverspage <- fluidPage(fluidRow(column(5, selectizeInput("selected_driver", "S
                fluidRow(column(5, textOutput("nationality_driver_out"))),
                fluidRow(column(5, textOutput("date_driver_out"))),
                fluidRow(column(5, textOutput("championships_driver_out"))),
-               fluidRow(column(5, textOutput("gp_driver_out")))
+               fluidRow(column(5, textOutput("gp_driver_out"))),
+               fluidRow(column(5, textOutput("second_driver_out"))),
+               fluidRow(column(5, textOutput("third_driver_out")))
                ,class ="about")
 
 # about page
@@ -77,9 +79,16 @@ server <- function(input, output) {
   output$gp_driver_out<-renderText({
     paste("Grand Prix Wins:", (drivers_summary %>% filter(Name==input$selected_driver))[5])
   })
+  output$second_driver_out<-renderText({
+    paste("Second Places:", (drivers_summary %>% filter(Name==input$selected_driver))[8])
+  })
+  output$third_driver_out<-renderText({
+    paste("Third Places:", (drivers_summary %>% filter(Name==input$selected_driver))[9])
+  })
   output$nationality_driver_out<-renderText({
     paste("Nationality:", (drivers_summary %>% filter(Name==input$selected_driver))[4])
   })
+  
 }
 
 # running the app

@@ -15,6 +15,8 @@ qualifying_stat<-read.csv("qualifying.csv", header = TRUE, col.names = c("qualif
 driver_standings_stat<-read.csv("driver_standings.csv", header = TRUE, col.names = c("driverStandingsId", "raceId", "driverId", "points", "position", "positionText", "wins"))
 # races 
 races_stat<-read.csv("races.csv", header = TRUE, col.names = c("raceId", "year", "round", "circuitId", "name", "date", "time", "url"))
+# results 
+race_results<-read.csv("results.csv", header = TRUE, col.names = c("resultId", "raceId", "driverId", "constructorId", "number", "grid", "position", "positionText", "positionOrder", "points", "laps", "time", "milliseconds", "fastestLap", "rank", "fastestLapTime", "fastestLapSpeed" , "statusId"))
  
 # combining data
 driver_stat<-merge(drivers_stat, driver_standings_stat, by.x = "driverId", by.y = "driverId", all.x = TRUE, all.y = TRUE)
@@ -38,6 +40,12 @@ driver_stat$positionQ[is.na(driver_stat$positionQ)]<-0
 # number of grand prix wins 
 gpWins <- driver_stat %>% group_by(driverId) %>% group_by(year) %>% filter(round==max(round))
 gpWins<-gpWins %>% group_by(driverId) %>% summarise(WINS = sum(wins))
+# second places
+secondPlaces <- race_results %>% group_by(driverId) %>% filter(position == 2) %>% summarise(second = n())
+# third places
+thirdPlaces <- race_results %>% group_by(driverId) %>% filter(position == 3) %>% summarise(third = n())
+
+
 
 # number of poles
 poles <- driver_stat %>% group_by(driverId) %>% filter(positionQ==1) %>% summarise(poles=sum(positionQ))
@@ -53,7 +61,8 @@ driver_data_stat <- driver_stat[,c("driverId","Name", "dob", "nationality")]
 drivers_summary<-merge(driver_data_stat, gpWins, by.x = "driverId", by.y = "driverId", all.x = TRUE)
 drivers_summary<-merge(drivers_summary, poles, by.x = "driverId", by.y = "driverId", all.x = TRUE)
 drivers_summary<-merge(drivers_summary, championships, by.x = "driverId", by.y = "driverId", all.x = TRUE)
-
+drivers_summary<-merge(drivers_summary, secondPlaces, by.x = "driverId", by.y = "driverId", all.x = TRUE)
+drivers_summary<-merge(drivers_summary, thirdPlaces, by.x = "driverId", by.y = "driverId", all.x = TRUE)
 # only keep unique rows
 drivers_summary <- distinct(drivers_summary)
 
