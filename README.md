@@ -1,4 +1,4 @@
-# Formula One Shiny App
+# Formula One App
 
 A Shiny web app showing formula one data. In the app driver or team standings can be compared for a selected season, as well as individual information about drivers.
 <br/>
